@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            height: 100vh;
+            background-color: #e3f2fd; /* info-subtle like color */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+			padding-bottom: 70px;
+        }
+        .card {
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <div class="card-header text-center bg-secondary text-white">
+        <h3>Login</h3>
+    </div>
+    <div class="card-body">
+        <form th:action="@{/loginUser}" method="post" th:object="${user}">
+            <div class="mb-3">
+                <label class="form-label">Username</label>
+                <input type="text" th:field="*{username}" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Password</label>
+                <input type="password" th:field="*{userpassword}" class="form-control" required>
+            </div>
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-primary">Login</button>
+                <a th:href="@{/form1}" class="btn btn-outline-dark">Back to Register</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<!-- Toast Message -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 11">
+    <div th:if="${loginMessage}" class="toast align-items-center text-bg-danger show" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body" th:text="${loginMessage}"></div>
+            <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
