@@ -79,12 +79,12 @@
         <form th:action="@{/form2}" method="post" th:object="${user}">
             <div class="mb-3">
                 <label class="form-label">User Name</label>
-                <input type="text" th:field="*{username}" class="form-control" placeholder="Enter your name.." required>
+                <input type="text" th:field="*{username}" class="form-control" placeholder="Enter your name.." autocomplete="off" required>
             </div>
 			<div class="mb-3">
 			    <label class="form-label">Password</label>
 			    <div class="input-group">
-			        <input type="password" th:field="*{userpassword}" class="form-control" placeholder="Enter your password.." id="passwordField" required>
+			        <input type="password" th:field="*{userpassword}" class="form-control" placeholder="Enter your password.." id="passwordField" autocomplete="off" required>
 			        <span class="input-group-text" onclick="togglePassword()">
 			            <i class="fa-solid fa-eye" id="eyeIcon"></i>
 			        </span>
