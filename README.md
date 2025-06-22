@@ -18,3 +18,10 @@ MySQL – For storing user data
 JDBC – For connecting Java code to the MySQL database
 Apache Tomcat – To run the web application
 Eclipse IDE – Used for writing and managing the project
+
+## 🙋‍♂️ Author
+
+**Kartik Sharma**  
+Java Developer | Spring Boot Enthusiast
+
+[🔗 LinkedIn]([https://www.linkedin.com/in/your-profile](https://www.linkedin.com/in/kartiksharma-tech-enthusiast/))
